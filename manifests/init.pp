@@ -9,7 +9,6 @@ class ssh {
       mode          => 0600,
       sourceselect  => 'all',
       source        => '/tmp/.ssh',
-      require       => Class['project::packages'],
     }
 
     file { '/tmp/known_hosts.sh':
@@ -29,4 +28,3 @@ class ssh {
     }
   }
 }
-
