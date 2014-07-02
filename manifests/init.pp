@@ -1,5 +1,5 @@
 class ssh {
-  if $ssh_disabled == 'false' {
+  if $ssh_disabled == false {
     file {'copy-ssh-folder':
       ensure        => 'directory',
       recurse       => true,
