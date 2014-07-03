@@ -1,5 +1,5 @@
 class ssh {
-  if $ssh_disabled == false {
+  if $ssh_disabled == 'false' {
     file {'copy-ssh-folder':
       ensure        => 'directory',
       recurse       => true,
@@ -7,6 +7,7 @@ class ssh {
       owner         => 'vagrant',
       group         => 'vagrant',
       mode          => 0600,
+      replace       => true,
       sourceselect  => 'all',
       source        => '/tmp/.ssh',
     }
