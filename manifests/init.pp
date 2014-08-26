@@ -1,5 +1,14 @@
 class ssh {
   if $ssh_disabled == 'false' {
+    file {'copy-authorized-keys':
+      ensure        => 'file',
+      path          => '/tmp/authorized_keys',
+      owner         => 'vagrant',
+      group         => 'vagrant',
+      replace       => true,
+      source        => '/home/vagrant/.ssh/authorized_keys',
+    }
+
     file {'copy-ssh-folder':
       ensure        => 'directory',
       recurse       => true,
@@ -10,12 +19,19 @@ class ssh {
       replace       => true,
       sourceselect  => 'all',
       source        => '/tmp/.ssh',
+      purge         => true,
+      require       => File['copy-authorized-keys'],
     }
 
     file { '/tmp/known_hosts.sh':
       ensure => file,
       source => '/vagrant/puppet/modules/ssh/files/known_hosts.sh',
       mode => 755,
+    }
+
+    exec {'add-authorized-key':
+      command       => '/bin/bash -c \'cat /tmp/authorized_keys >> /home/vagrant/.ssh/authorized_keys\'',
+      require       => File['copy-ssh-folder'],
     }
 
     exec { 'add-known-hosts':
