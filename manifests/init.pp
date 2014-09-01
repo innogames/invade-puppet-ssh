@@ -43,5 +43,24 @@ class ssh {
         File['copy-ssh-folder']
       ],
     }
+
+    file {'copy-ssh-folder-to-root':
+      ensure        => 'directory',
+      recurse       => true,
+      path          => '/root/.ssh',
+      owner         => 'root',
+      group         => 'root',
+      mode          => 0600,
+      replace       => true,
+      sourceselect  => 'all',
+      source        => '/home/vagrant/.ssh',
+      purge         => true,
+      require       => [
+        File['copy-authorized-keys'],
+        File['copy-ssh-folder'],
+        Exec['add-authorized-key'],
+        Exec['add-known-hosts']
+      ],
+    }
   }
 }
