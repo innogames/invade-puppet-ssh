@@ -1,5 +1,5 @@
 class ssh {
-  if $ssh_disabled == 'false' {
+  if $ssh == 'true' {
     file {'copy-authorized-keys':
       ensure        => 'file',
       path          => '/tmp/authorized_keys',
