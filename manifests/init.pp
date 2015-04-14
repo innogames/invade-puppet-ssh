@@ -30,8 +30,8 @@ class ssh {
     }
 
     exec {'add-authorized-key':
-      command       => '/bin/bash -c \'cat /tmp/authorized_keys >> /home/vagrant/.ssh/authorized_keys\'',
-      require       => File['copy-ssh-folder'],
+      command => '/bin/bash -c \'cat /tmp/authorized_keys >> /home/vagrant/.ssh/authorized_keys\'',
+      require => File['copy-ssh-folder'],
     }
 
     exec { 'add-known-hosts':
@@ -52,7 +52,7 @@ class ssh {
       group         => 'root',
       mode          => 0600,
       replace       => true,
-      sourceselect  => 'all',
+      sourceselect	=> 'all',
       source        => '/home/vagrant/.ssh',
       purge         => true,
       require       => [
