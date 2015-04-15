@@ -2,8 +2,7 @@
   "name": "corporate-base",
   "version": "1.0.0",
   "author": "Corporate Systems",
-  "summary": "Puppet module for the corporate system puppet base module'
-description 'This module is responsible for the needed package of the base box.",
+  "summary": "Puppet module for the corporate system puppet base module",
   "license": "Apache2",
   "source": "git@gitlab.innogames.de:backend/puppet-base.git",
   "project_page": "https://gitlab.innogames.de/backend/puppet-base",
