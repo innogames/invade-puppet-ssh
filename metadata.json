@@ -1,14 +1,13 @@
 {
-  "name": "corporate-base",
+  "name": "corporate-ssh",
   "version": "1.0.0",
   "author": "Corporate Systems",
-  "summary": "Puppet module for the corporate system puppet base module'
-description 'This module is responsible for the needed package of the base box.",
-  "license": "Apache2",
-  "source": "git@gitlab.innogames.de:backend/puppet-base.git",
-  "project_page": "https://gitlab.innogames.de/backend/puppet-base",
-  "issues_url": "https://gitlab.innogames.de:backend/puppet-base/issues",
-  "description": "Module for Puppet that keeps track of all needed packages of the BaseBox used by VirtualBox through Vagrant to setup a virtual development environment for all employees at Corporate Systems.",
+  "summary": "Puppet module for the corporate system puppet ssh module",
+  "license": "Apache-2.0",
+  "source": "git@gitlab.innogames.de:backend/puppet-ssh.git",
+  "project_page": "https://gitlab.innogames.de/backend/puppet-ssh",
+  "issues_url": "https://gitlab.innogames.de:backend/puppet-ssh/issues",
+  "description": "Module for Puppet that keeps track of all needed packages of the sshBox used by VirtualBox through Vagrant to setup a virtual development environment for all employees at Corporate Systems.",
   "types": [
   ]
 }
