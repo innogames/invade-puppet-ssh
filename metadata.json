@@ -1,6 +1,6 @@
 {
   "name": "corporate-ssh",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "author": "Lennart Stein <lennart.stein@innogames.com>",
   "summary": "Puppet SSH Module",
   "license": "MIT License",
