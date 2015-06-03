@@ -25,7 +25,7 @@ class ssh {
 
     file { '/tmp/known_hosts.sh':
       ensure => file,
-      source => '/vagrant/puppet/modules/ssh/files/known_hosts.sh',
+      source => 'puppet:///vendor/ssh/known_hosts.sh',
       mode => 755,
     }
 
