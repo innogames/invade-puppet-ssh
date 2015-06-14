@@ -1,4 +1,4 @@
-class ssh {
+class invade-ssh {
   if $ssh == 'true' {
     file {'copy-authorized-keys':
       ensure        => 'file',
